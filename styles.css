@@ -1,0 +1,213 @@
+body{
+    max-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#container {
+    width: 50%;
+    min-height: 60vh;
+    min-height: 60vh;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#tiles-container {
+    width: 70%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#tiles {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    max-width: calc(31% + 5px);
+    min-width: calc(31% - 5px);
+    /* min-height: 100; */
+    height: auto auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 5px;
+    text-align: center;
+    font-size: 32px;
+    line-height: 50px;
+    border-radius: 10px;
+    p{
+        display: block;
+        margin: 5px;
+        text-align: center;
+        font-size: 32px;
+        line-height: 50px;
+        border-radius: 10px;
+    }
+}
+
+.tile:nth-child(odd) {
+    background-color: #c3f240;
+    color: black;
+}
+
+.tile:nth-child(even) {
+    background-color: #2f2f2f;
+    color: white;
+}
+
+#button-container {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: #2f2f2f;
+    border-radius: 0px 20px 20px 0px ;
+    padding: 20px;
+}
+
+#shuffleBtn{
+    width: 100%;
+    min-height: 40px;
+    height: 45px;
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+
+    i{
+        margin-right: 10px;
+    }
+}
+
+#sortBtn{
+    width: 100%;
+    min-height: 40px;
+    height: 45px;
+    text-align: left;
+    font-size: 18px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+
+    i{
+        margin-right: 10px;
+    }
+}
+
+#shuffleBtn:hover, #sortBtn:hover{
+    scale: 1.1;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+    #container {
+        min-width: 100%;
+        max-width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: hidden;
+        border: none;
+        border-radius: 0%;
+        box-shadow: none;
+    }
+    
+    #tiles-container {
+        min-width: 100%;
+        max-height: fit-content;
+        display: flex;
+        flex-direction: column;
+        order: 2; 
+
+
+        #tiles{
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            
+
+            .tile{
+                min-width: 95%;
+                border: 1px solid gray;
+                display: flex;
+                flex-direction: row;
+                align-items: start;
+                justify-content: space-between;
+                background-color: aliceblue;
+
+                .top-color{
+                    z-index: 5;
+                    min-width: 20px;
+                    height: 100%;
+                    border-radius: 5px 0px 0px 5px;
+
+                }
+
+                .text{
+                    min-width: 90%;
+                    text-align: center;
+                    color: black;
+                }
+
+
+            }
+            .tile:nth-child(odd) .top-color{
+                background-color: #2f2f2f;
+            }
+            
+            .tile:nth-child(even) .top-color{
+                background-color: #c3f240;
+            }
+            
+        }
+    }
+    
+    #button-container {
+        width: 100%;
+        height: 150px;
+        border-radius: 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        order: 1; 
+
+
+        #sortBtn, #shuffleBtn{
+            width: 70px;
+            height: 70px;
+            display: inline-block;
+            margin-bottom: 0;
+            margin-right: 15px;
+            background-color: #c3f240;
+            color: rgb(253, 253, 252);
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                display: none;
+            }
+        }
+    }
+}
